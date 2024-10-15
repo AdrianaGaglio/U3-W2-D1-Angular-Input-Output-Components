@@ -1,0 +1,24 @@
+<div
+  [ngClass]="{ 'border-primary': post.active }"
+  class="card h-100 p-2 shadow-sm"
+>
+  <h6 class="flex-grow-1">{{ post.title }}</h6>
+  <div class="mt-auto mb-3">
+    <span
+      class="mx-1 d-inline-block px-1 text-success btn-outline-success border border-1 border-success fs-7 fw-lighter fw-normal rounded-pill"
+      *ngFor="let tag of post.tags"
+      >{{ tag }}</span
+    >
+  </div>
+  <!-- <div class="text-center"> -->
+  <div class="btn-group">
+    <button
+      [routerLink]="['/post-detail', post.id]"
+      class="btn btn-info btn-sm px-2"
+    >
+      Leggi post
+    </button>
+    <ng-content select="[slot='1']"></ng-content>
+  </div>
+  <ng-content select="[slot='2']"></ng-content>
+</div>

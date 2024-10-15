@@ -1,0 +1,16 @@
+<div *ngIf="featuredPost" class="bg-body-tertiary p-3 rounded-2 shadow-sm">
+  <h4 [innerHTML]="featuredPost.title"></h4>
+  <p [innerHTML]="featuredPost.body"></p>
+  <div class="text-end">
+    <span
+      class="mx-1 d-inline-block py-1 px-2 text-success btn-outline-success border border-1 border-success fs-7 fw-lighter fw-normal rounded-pill"
+      *ngFor="let tag of featuredPost.tags"
+      >{{ tag }}</span
+    >
+  </div>
+</div>
+<!-- related-posts-component -->
+<app-related-posts
+  [featuredPost]="featuredPost"
+  [posts]="posts"
+></app-related-posts>
